@@ -1,0 +1,7 @@
+1005,Tran Thi,An,IT,8.2
+1001,Vu Cao,Tri,CSC,7.1
+1003,Le Huu,Son,IT,4.6
+1004,Nguyen Le Thanh,Binh,CSC,6.7
+1002,Truong Dinh,Tam,IT,7.0
+1007,Nguyen Van,Binh,IT,7.3
+1006,Hoang Van,Trung,IT,6.8
