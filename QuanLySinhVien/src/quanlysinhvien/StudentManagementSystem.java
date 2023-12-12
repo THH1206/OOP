@@ -41,7 +41,8 @@ class StudentManagementSystem {
     }
 
     public void loadFromFile() {
-        String filePath = "D:/OOP/QuanLySinhVien/src/quanlysinhvien/ListStudents.txt";
+//        String filePath = "D:/OOP/QuanLySinhVien/src/quanlysinhvien/ListStudents.txt";
+                String filePath = "D:/OOP/QuanLySinhVien/src/quanlysinhvien/ListStudents.txt";
 
         List<Student> loadedStudents = new ArrayList<>();
         Path path = Paths.get(filePath);
@@ -177,14 +178,25 @@ class StudentManagementSystem {
             return;
         }
 
-        Student highestGPAStudent = Collections.max(students, Comparator.comparingDouble(Student::getGpa));
+        sortStudentsByGPA(); // Sắp xếp danh sách sinh viên giảm dần theo GPA
+
+        // Tìm điểm GPA cao nhất
+        double highestGPA = students.get(0).getGpa();
 
         System.out.println("+--------------------------------------------------------------+");
         System.out.printf("| %-4s | %-15s | %-15s | %-10s | %-4s |\n", "SID", "LAST NAME", "FIRST NAME", "MAJOR", "GPA");
         System.out.println("+--------------------------------------------------------------+");
 
-        System.out.printf("| %-4d | %-15s | %-15s | %-10s | %-4.1f |\n",
-                highestGPAStudent.getSid(), highestGPAStudent.getLastName(), highestGPAStudent.getFirstName(), highestGPAStudent.getMajor(), highestGPAStudent.getGpa());
+        // Duyệt qua danh sách để tìm tất cả sinh viên có điểm GPA cao nhất
+        for (Student student : students) {
+            if (student.getGpa() == highestGPA) {
+                System.out.printf("| %-4d | %-15s | %-15s | %-10s | %-4.1f |\n",
+                        student.getSid(), student.getLastName(), student.getFirstName(), student.getMajor(), student.getGpa());
+            } else {
+                // Vòng lặp sẽ dừng khi gặp sinh viên có điểm GPA khác với điểm GPA cao nhất
+                break;
+            }
+        }
 
         System.out.println("+--------------------------------------------------------------+");
     }

@@ -5,3 +5,4 @@
 1002,Truong Dinh,Tam,IT,7.0
 1007,Nguyen Van,Binh,IT,7.3
 1006,Hoang Van,Trung,IT,6.8
+1008,Hoang Van,Trung,IT,8.2
